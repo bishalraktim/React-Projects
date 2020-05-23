@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+.colors {
+  color: blue;
+  font-size: 50px;
+}
+
+.font {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.App button {
+  background-color: blue;
+  color: white;
+  font: inherit;
+  border: 1px solid gray;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.App button:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.App button.buttonClass {
+  background-color: #F25557;
+  color: white;
+}
+
+.App button.buttonClass:hover {
+  background-color: green;
+  color: white;
+}
