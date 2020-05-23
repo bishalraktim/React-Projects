@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import styled from 'styled-components';
 
-const StyledButton = styled.button`
-  background-color: ${props => props.hoverEffect ? 'red' : 'indigo'};
-  color: white;
-  font: inherit;
-  border: 1px solid blue;
-  padding: 8px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${props => props.hoverEffect ? 'blue' : '#C750B7'};
-    color: white;
-  }
-`;
+// const StyledButton = styled.button`
+//   background-color: ${props => props.hoverEffect ? 'red' : 'indigo'};
+//   color: white;
+//   font: inherit;
+//   border: 1px solid blue;
+//   padding: 8px;
+//   cursor: pointer;
+//
+//   &:hover {
+//     background-color: ${props => props.hoverEffect ? 'blue' : '#C750B7'};
+//     color: white;
+//   }
+// `;
 
       // style.backgroundColor = 'red';
       // style[':hover'] = {
@@ -107,10 +106,9 @@ class App extends Component {
       <div className="App">
         <h1 className={classes.join(' ')}>Learning React from Scratch!</h1>
 
-        <StyledButton
-          hoverEffect={this.state.showPersons}
+        <button
           onClick={this.togglePersonsHandler}>Toggle Persons
-        </StyledButton>
+        </button>
 
         {persons}
 
