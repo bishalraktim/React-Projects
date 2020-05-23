@@ -1,7 +1,27 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-import Radium, { StyleRoot } from 'radium';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+  background-color: ${props => props.hoverEffect ? 'red' : 'indigo'};
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${props => props.hoverEffect ? 'blue' : '#C750B7'};
+    color: white;
+  }
+`;
+
+      // style.backgroundColor = 'red';
+      // style[':hover'] = {
+      //   backgroundColor: 'yellow',
+      //   color: 'black'
+      // };
 
 
 class App extends Component {
@@ -51,20 +71,6 @@ class App extends Component {
 
   render() {
 
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'purple',
-        color: 'white'
-      }
-    }
-
-
     let persons = null;
 
     if(this.state.showPersons){
@@ -86,12 +92,6 @@ class App extends Component {
           })}
         </div>
       );
-
-      style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'yellow',
-        color: 'black'
-      };
     }
 
     const classes = [];
@@ -104,21 +104,19 @@ class App extends Component {
     }
 
     return (
-      <StyleRoot>
-        <div className="App">
-          <h1 className={classes.join(' ')}>Learning React from Scratch!</h1>
+      <div className="App">
+        <h1 className={classes.join(' ')}>Learning React from Scratch!</h1>
 
-          <button
-            style={style}
-            onClick={this.togglePersonsHandler}>Toggle Persons
-          </button>
+        <StyledButton
+          hoverEffect={this.state.showPersons}
+          onClick={this.togglePersonsHandler}>Toggle Persons
+        </StyledButton>
 
-          {persons}
+        {persons}
 
-        </div>
-      </StyleRoot>
+      </div>
     );
   }
 }
 
-export default Radium(App);
+export default App;
